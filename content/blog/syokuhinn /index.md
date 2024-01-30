@@ -2,6 +2,7 @@
 title: gatsby-starter-blogにタグ機能を追加する
 date: "2015-05-28T22:40:32.169Z"
 description: Gatsby.jsテンプレートであるgatsby-starter-blogにタグ機能を追加する手順を解説
+thumbnail: "./images/Markdown.jpg"
 tags: ["Gatsby.js", "ブログ開発"]
 ---
 
@@ -32,12 +33,44 @@ tags: ["Gatsby.js","ブログ開発"]
 次に、gatsby-node.js の type Frontmatter の部分に、以下のように tags の型を設定します。
 
 ```js:sample
----
 type Frontmatter {
   title: String
   description: String
   date: Date @dateformat
   tags: [String!]  // 追加
 }
----
+```
+
+これは null でない String 型の配列(配列自体が null であってもよい)を意味します。
+
+これを追加しないとエラーが出ます。
+
+続いて、src/pages/index.js や src/templates/blog-post.js の pageQuery で tags を追加します。
+
+これで、各ページの tags のデータを取得できるようになります。
+
+```js:sample
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      nodes {
+        excerpt
+        fields {
+          slug
+        }
+        frontmatter {
+          date
+          title
+          description
+          tags // 追加
+          thumbnail
+        }
+      }
+    }
+  }
 ```

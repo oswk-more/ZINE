@@ -11,6 +11,7 @@
     "@fontsource-variable/montserrat": "^5.0.17",
     "@fontsource/merriweather": "^5.0.8",
     "gatsby": "^5.13.2",
+    "gatsby-image": "^3.11.0",
     "gatsby-plugin-feed": "^5.13.1",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
@@ -28,6 +29,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.17",
     "gatsby-plugin-postcss": "^6.13.1",
+    "gatsby-plugin-typegen": "^3.1.0",
     "postcss": "^8.4.33",
     "prettier": "^2.8.8",
     "tailwindcss": "^3.4.1"

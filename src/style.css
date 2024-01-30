@@ -9,9 +9,9 @@
   --maxWidth-xl: 36rem;
   --maxWidth-2xl: 42rem;
   --maxWidth-3xl: 48rem;
-  --maxWidth-4xl: 56rem;
+  --maxWidth-4xl: 62rem;
   --maxWidth-full: "100%";
-  --maxWidth-wrapper: var(--maxWidth-2xl);
+  --maxWidth-wrapper: var(--maxWidth-4xl);
   --spacing-px: "1px";
   --spacing-0: 0;
   --spacing-1: 0.25rem;
@@ -276,6 +276,28 @@ a:focus {
   font-size: var(--fontSize-2);
 }
 
+/* 任意のCSSファイル（例: styles.css） */
+
+.tags-article {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px; /* タグと記事の間に適切なマージンを設定 */
+}
+
+.tags-article button {
+  background-color: #f0f0f0;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* ホバーエフェクトを追加する場合 */
+}
+
+.tags-article button:hover {
+  background-color: #e0e0e0;
+}
+
 .bio {
   display: flex;
   margin-bottom: var(--spacing-16);
@@ -319,5 +341,41 @@ a:focus {
   ul,
   ol {
     list-style-position: inside;
+  }
+}
+
+/* src/components/Sidebar.css */
+
+.main-container {
+  display: flex;
+
+  flex-wrap: wrap; /* 画面が狭い場合に折り返す */
+}
+
+.main-content {
+  flex: 3;
+  width: 30%;
+  padding: 16px;
+  border-radius: 10px; /* 丸い角を指定 */
+  /* メインコンテンツのスタイルを追加 */
+}
+
+.sidebar {
+  padding-left: 16px;
+  border-radius: 10px; /* 丸い角を指定 */
+  /* 他のスタイルを追加 */
+  flex: 1;
+  /* サイドバーのスタイルはサイドバー用のCSSファイルで定義 */
+}
+
+/* レスポンシブデザイン用のメディアクエリ */
+@media screen and (max-width: 1200px) {
+  .main-container {
+    flex-direction: column; /* 画面が狭い場合は縦に並べる */
+  }
+
+  .main-content,
+  .sidebar {
+    flex: auto; /* 全幅を取る */
   }
 }
