@@ -18,16 +18,17 @@ const BlogPostTemplate = ({
 
   return (
     <Layout location={location} title={siteTitle}>
-      <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
-        <div className="thumnail">
-          <GatsbyImage image={image} />
-        </div>
-        <div className="main-container">
-          <main className="main-content">
+      <div className="main-container">
+        <main className="main-content">
+          <article
+            className="blog-post"
+            itemScope
+            itemType="http://schema.org/Article"
+          >
+            <div className="thumnail">
+              <GatsbyImage image={image} />
+            </div>
+
             <header>
               <h1 itemProp="headline">{post.frontmatter.title}</h1>
               <p>{post.frontmatter.date}</p>
@@ -51,10 +52,11 @@ const BlogPostTemplate = ({
             <footer>
               <Bio />
             </footer>
-          </main>
-          <Sidebar />
-        </div>
-      </article>
+
+            <Sidebar />
+          </article>
+        </main>
+      </div>
       <nav className="blog-post-nav">
         <ul
           style={{
