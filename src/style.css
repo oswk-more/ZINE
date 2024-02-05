@@ -10,8 +10,9 @@
   --maxWidth-2xl: 42rem;
   --maxWidth-3xl: 48rem;
   --maxWidth-4xl: 62rem;
+  --maxWidth-5xl: 76rem;
   --maxWidth-full: "100%";
-  --maxWidth-wrapper: var(--maxWidth-4xl);
+  --maxWidth-wrapper: var(--maxWidth-5xl);
   --spacing-px: "1px";
   --spacing-0: 0;
   --spacing-1: 0.25rem;
@@ -37,13 +38,13 @@
   --lineHeight-relaxed: 1.625;
   /* 1.200 Minor Third Type Scale */
   --fontSize-0: 0.833rem;
-  --fontSize-1: 1rem;
-  --fontSize-2: 1.2rem;
-  --fontSize-3: 1.44rem;
-  --fontSize-4: 1.728rem;
-  --fontSize-5: 2.074rem;
-  --fontSize-6: 2.488rem;
-  --fontSize-7: 2.986rem;
+  --fontSize-1: 0.9rem;
+  --fontSize-2: 1rem;
+  --fontSize-3: 1.2rem;
+  --fontSize-4: 1.44rem;
+  --fontSize-5: 1.728rem;
+  --fontSize-6: 2.074rem;
+  --fontSize-7: 2.488rem;
   --color-primary: #005b99;
   --color-text: #2e353f;
   --color-text-light: #4f5969;
@@ -250,8 +251,19 @@ a:focus {
 }
 
 .post-list-item {
+  display: flex;
+  align-items: flex-start;
   margin-bottom: var(--spacing-8);
   margin-top: var(--spacing-8);
+}
+
+.thumbnail {
+  margin-right: var(--spacing-4);
+}
+
+.content {
+  flex: 1;
+  padding-left: var(--spacing-5);
 }
 
 .post-list-item p {
@@ -267,13 +279,6 @@ a:focus {
 
 .post-list-item header {
   margin-bottom: var(--spacing-4);
-}
-
-.header-link-home {
-  font-weight: var(--fontWeight-bold);
-  font-family: var(--font-heading);
-  text-decoration: none;
-  font-size: var(--fontSize-2);
 }
 
 /* 任意のCSSファイル（例: styles.css） */
@@ -348,20 +353,18 @@ a:focus {
 
 .main-container {
   display: flex;
-
   flex-wrap: wrap; /* 画面が狭い場合に折り返す */
 }
 
 .main-content {
-  flex: 3;
-  width: 30%;
+  flex: 4;
   padding: 16px;
   border-radius: 10px; /* 丸い角を指定 */
   /* メインコンテンツのスタイルを追加 */
 }
 
 .sidebar {
-  padding-left: 16px;
+  padding: 16px;
   border-radius: 10px; /* 丸い角を指定 */
   /* 他のスタイルを追加 */
   flex: 1;
@@ -377,5 +380,42 @@ a:focus {
   .main-content,
   .sidebar {
     flex: auto; /* 全幅を取る */
+  }
+
+  .content {
+    padding: var(--spacing-0);
+  }
+
+  .post-list-item {
+    display: flex;
+    flex-direction: column; /* 縦に並べる設定を追加 */
+    align-items: flex-start;
+    margin-bottom: var(--spacing-8);
+    margin-top: var(--spacing-8);
+  }
+
+  .post-list-item p {
+    margin-bottom: var(--spacing-0);
+  }
+
+  .post-list-item h2 {
+    font-size: var(--fontSize-4);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-2);
+    margin-top: var(--spacing-0);
+  }
+
+  .post-list-item header {
+    margin-bottom: var(--spacing-4);
+  }
+
+  .header-link-home {
+    font-weight: var(--fontWeight-bold);
+    font-family: var(--font-heading);
+    text-decoration: none;
+    font-size: var(--fontSize-2);
+  }
+  .thumbnail {
+    margin: auto;
   }
 }

@@ -15,7 +15,7 @@ const Sidebar = ({ isOpen, onClose }) => {
   const tags = data.allMarkdownRemark.distinct
   return (
     <div className={`sidebar ${isOpen ? "open" : ""}`}>
-      <h2>Tags</h2>
+      <h3>Tags</h3>
       <ul>
         <div className="tgs-article">
           {tags &&
