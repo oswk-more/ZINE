@@ -99,7 +99,7 @@ module.exports = {
                   frontmatter {
                     title
                     date
-                    thumbnail
+          
                   }
                 }
               }
