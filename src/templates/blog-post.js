@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -14,7 +14,6 @@ const BlogPostTemplate = ({
 }) => {
   const siteTitle = site.siteMetadata?.title || `Title`
   const tags = post.frontmatter.tags
-  const image = getImage(post.frontmatter.thumbnail)
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -25,7 +24,7 @@ const BlogPostTemplate = ({
           itemType="http://schema.org/Article"
         >
           <div className="hero">
-            <GatsbyImage image={image} />
+            <GatsbyImage image={post.frontmatter.thumbnail} />
           </div>
 
           <header>
