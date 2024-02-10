@@ -11,8 +11,8 @@ module.exports = {
   siteMetadata: {
     title: `ZINE` /*サイトタイトル*/,
     author: {
-      name: `Sou Oshikawa` /*サイトの運営者*/,
-      summary: `ここに入れる` /*まとめ*/,
+      name: `Sou` /*サイトの運営者*/,
+      summary: `趣味でweb開発と哲学をしている人。専門分野は生物学。人工生命独学中。` /*まとめ*/,
     },
     description: `` /*サイトの説明欄*/,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/` /*リンク先サイトのURL*/,

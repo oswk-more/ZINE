@@ -18,45 +18,46 @@ const BlogPostTemplate = ({
 
   return (
     <Layout location={location} title={siteTitle}>
-      <div className="main-container">
-        <main className="main-content">
-          <article
-            className="blog-post"
-            itemScope
-            itemType="http://schema.org/Article"
-          >
-            <div className="thumnail">
-              <GatsbyImage image={image} />
+      <div style={{ listStyle: `none` }}>
+        <article
+          className="blog-post"
+          itemScope
+          itemType="http://schema.org/Article"
+        >
+          <div className="hero">
+            <GatsbyImage image={image} />
+          </div>
+
+          <header>
+            <h1 itemProp="headline">{post.frontmatter.title}</h1>
+            <p>{post.frontmatter.date}</p>
+            <div className="tags-article">
+              {tags &&
+                tags.length > 0 &&
+                tags.map(tag => {
+                  return (
+                    <Link to={`/tags/${kebabCase(tag)}/`} itemProp="url">
+                      <button>{tag}</button>
+                    </Link>
+                  )
+                })}
             </div>
+          </header>
 
-            <header>
-              <h1 itemProp="headline">{post.frontmatter.title}</h1>
-              <p>{post.frontmatter.date}</p>
-              <div className="tags-article">
-                {tags &&
-                  tags.length > 0 &&
-                  tags.map(tag => {
-                    return (
-                      <Link to={`/tags/${kebabCase(tag)}/`} itemProp="url">
-                        <button>{tag}</button>
-                      </Link>
-                    )
-                  })}
-              </div>
-            </header>
-            <section
-              dangerouslySetInnerHTML={{ __html: post.html }}
-              itemProp="articleBody"
-            />
-            <hr />
-            <footer>
-              <Bio />
-            </footer>
+          <section
+            dangerouslySetInnerHTML={{ __html: post.html }}
+            itemProp="articleBody"
+          />
 
-            <Sidebar />
-          </article>
-        </main>
+          <hr />
+          <footer>
+            <Bio />
+          </footer>
+        </article>
+
+        <Sidebar />
       </div>
+
       <nav className="blog-post-nav">
         <ul
           style={{

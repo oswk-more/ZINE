@@ -1,5 +1,4 @@
 /* CSS Custom Properties Definitions */
-/*  */
 :root {
   --maxWidth-none: "none";
   --maxWidth-xs: 20rem;
@@ -245,20 +244,20 @@ a:focus {
   margin-bottom: var(--spacing-12);
 }
 
+/* Header Title */
+
 .main-heading {
   font-size: var(--fontSize-7);
   margin: 0;
 }
+
+/* リストの中身 */
 
 .post-list-item {
   display: flex;
   align-items: flex-start;
   margin-bottom: var(--spacing-8);
   margin-top: var(--spacing-8);
-}
-
-.thumbnail {
-  margin-right: var(--spacing-4);
 }
 
 .content {
@@ -281,7 +280,13 @@ a:focus {
   margin-bottom: var(--spacing-4);
 }
 
-/* 任意のCSSファイル（例: styles.css） */
+/* サムネイル */
+
+.thumbnail {
+  margin-right: var(--spacing-4);
+}
+
+/*　タグ　*/
 
 .tags-article {
   display: flex;
@@ -303,6 +308,8 @@ a:focus {
   background-color: #e0e0e0;
 }
 
+/*　bio　*/
+
 .bio {
   display: flex;
   margin-bottom: var(--spacing-16);
@@ -318,6 +325,8 @@ a:focus {
   min-width: 50px;
   border-radius: 100%;
 }
+
+/*　ブログ　*/
 
 .blog-post header h1 {
   margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
@@ -373,25 +382,76 @@ a:focus {
 
 /* レスポンシブデザイン用のメディアクエリ */
 @media screen and (max-width: 1200px) {
-  .main-container {
-    flex-direction: column; /* 画面が狭い場合は縦に並べる */
+  .explanation {
+    display: none;
+  }
+
+  .global-wrapper {
+    margin: var(--spacing-0) auto;
+    max-width: var(--maxWidth-wrapper);
+    padding: var(--spacing-10) var(--spacing-3);
+  }
+
+  .global-wrapper[data-is-root-path="true"] .bio {
+    margin-bottom: var(--spacing-20);
+  }
+
+  .global-header {
+    margin-bottom: var(--spacing-12);
   }
 
   .main-content,
   .sidebar {
+    padding: var(--spacing-0) var(--spacing-0);
     flex: auto; /* 全幅を取る */
   }
-
+  .sidebar h3 {
+    padding: var(--spacing-0) var(--spacing-0);
+    margin-top: 0%;
+  }
   .content {
     padding: var(--spacing-0);
   }
+  .thumnail img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+  }
+
+  /*　タグ　*/
+
+  .tags-article {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px; /* タグと記事の間に適切なマージンを設定 */
+  }
+
+  .tags-article button {
+    background-color: #f0f0f0;
+    padding: 3px 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* ホバーエフェクトを追加する場合 */
+  }
+
+  .tags-article button:hover {
+    background-color: #e0e0e0;
+  }
+
+  /* リストの中身 */
 
   .post-list-item {
     display: flex;
-    flex-direction: column; /* 縦に並べる設定を追加 */
     align-items: flex-start;
     margin-bottom: var(--spacing-8);
     margin-top: var(--spacing-8);
+  }
+
+  .content {
+    flex: 1;
+    padding-left: var(--spacing-5);
   }
 
   .post-list-item p {
@@ -399,7 +459,7 @@ a:focus {
   }
 
   .post-list-item h2 {
-    font-size: var(--fontSize-4);
+    font-size: var(--fontSize-2);
     color: var(--color-primary);
     margin-bottom: var(--spacing-2);
     margin-top: var(--spacing-0);
@@ -407,15 +467,5 @@ a:focus {
 
   .post-list-item header {
     margin-bottom: var(--spacing-4);
-  }
-
-  .header-link-home {
-    font-weight: var(--fontWeight-bold);
-    font-family: var(--font-heading);
-    text-decoration: none;
-    font-size: var(--fontSize-2);
-  }
-  .thumbnail {
-    margin: 0 auto;
   }
 }
