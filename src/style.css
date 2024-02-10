@@ -283,6 +283,7 @@ a:focus {
 /* サムネイル */
 
 .thumbnail {
+  max-width: 360px;
   margin-right: var(--spacing-4);
 }
 
