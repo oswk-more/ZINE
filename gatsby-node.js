@@ -20,7 +20,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Get all markdown blog posts sorted by date
   const result = await graphql(`
     {
-      allMarkdownRemark(sort: { frontmatter: { date: ASC } }, limit: 1000) {
+      allMarkdownRemark(sort: { frontmatter: { date: ASC } }, limit: 10000) {
         nodes {
           id
           fields {
@@ -80,6 +80,23 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     })
   }
+  const blogPostsPerPage = 3 //一ページの表示する記事の数
+  const blogPosts = result.data.allMarkdownRemark.nodes.length //記事の総数
+  const blogPages = Math.ceil(blogPosts / blogPostsPerPage) //記事一覧ページの総数
+
+  Array.from({ length: blogPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/blog/` : `/blog/${i}/`,
+      component: path.resolve(`./src/templates/blog-list.js`),
+      context: {
+        skip: blogPostsPerPage * i,
+        limit: blogPostsPerPage,
+        currentPage: i + 1, //現在のページ番号
+        isFirst: i + 1 === 1, //最初のページ
+        isLast: i + 1 === blogPages, //最後のページ
+      },
+    })
+  })
 }
 
 /**

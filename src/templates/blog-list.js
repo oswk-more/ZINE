@@ -105,8 +105,15 @@ export default BlogIndex
 export const Head = () => <Seo title="All posts" />
 
 export const pageQuery = graphql`
-  {
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+  query pageUsersmoredevgatsbyZinEsrctemplatesblogListJs550212975(
+    $skip: Int!
+    $limit: Int!
+  ) {
+    allMarkdownRemark(
+      skip: $skip
+      limit: $limit
+      sort: { frontmatter: { date: DESC } }
+    ) {
       nodes {
         excerpt
         fields {
