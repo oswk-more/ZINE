@@ -1,7 +1,7 @@
 ---
 title: gatsby-starter-blogにタグ機能を追加する
-date: "2015-05-28T22:40:32.169Z"
-description: Gatsby.jsテンプレートであるgatsby-starter-blogにタグ機能を追加する手順を解説したgggggggいとおこまいます
+date: "2024-02-12"
+description: Gatsby.jsテンプレートであるgatsby-starter-blogにタグ機能を追加する手順を解説
 thumbnail: "./Markdown.jpg"
 tags: ["Gatsby.js", "ブログ開発"]
 ---

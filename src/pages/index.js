@@ -86,6 +86,7 @@ const BlogIndex = ({ data, location }) => {
               )
             })}
           </ol>
+
           <Bio />
         </main>
         <Sidebar />

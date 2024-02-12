@@ -22,6 +22,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-postcss`,
+    `gatsby-transformer-remark`,
     `gatsby-plugin-image` /*画像処理用プラグイン*/,
     {
       resolve: `gatsby-source-filesystem`,

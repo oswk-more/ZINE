@@ -8,6 +8,10 @@ const Sidebar = ({ isOpen, onClose }) => {
     query {
       allMarkdownRemark {
         distinct(field: { frontmatter: { tags: SELECT } })
+        group(field: { frontmatter: { tags: SELECT } }) {
+          fieldValue
+          totalCount
+        }
       }
     }
   `)
@@ -25,6 +29,15 @@ const Sidebar = ({ isOpen, onClose }) => {
                 <li>
                   <Link to={`/tags/${kebabCase(tag)}/`} itemProp="url">
                     <button>{tag}</button>
+                    {data.allMarkdownRemark.group.map(
+                      item =>
+                        item.fieldValue === tag && (
+                          <span key={item.fieldValue}>
+                            {" "}
+                            ({item.totalCount})
+                          </span>
+                        )
+                    )}
                   </Link>
                 </li>
               )

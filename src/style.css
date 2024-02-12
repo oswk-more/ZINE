@@ -283,14 +283,7 @@ a:focus {
 /* サムネイル */
 
 .thumbnail {
-  max-width: 360px;
   margin-right: var(--spacing-4);
-}
-
-.thumnail img {
-  width: 300px;
-  height: 180px;
-  object-fit: cover;
 }
 
 /*　タグ　*/

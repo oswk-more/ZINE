@@ -12,25 +12,25 @@ const Footer = () => {
               href="#"
               class="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
             >
-              About
+              HOME
             </a>
             <a
               href="#"
               class="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
             >
-              Investor Relations
+              ご利用規約
             </a>
             <a
               href="#"
               class="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
             >
-              Jobs
+              プライバシー
             </a>
             <a
               href="#"
               class="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
             >
-              Press
+              portfolio
             </a>
             <a
               href="#"
@@ -112,7 +112,7 @@ const Footer = () => {
         </div>
 
         <div class="py-8 text-center text-sm text-gray-400">
-          © 2021 - Present Flowrift. All rights reserved.
+          Copyright © 2024 sou. All Rights Reserved.
         </div>
       </footer>
     </div>
