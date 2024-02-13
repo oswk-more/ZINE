@@ -48,9 +48,9 @@ const Tags = ({ data, pageContext, location }) => {
                     itemScope
                     itemType="http://schema.org/Article"
                   >
-                    <div className="thumnail">
+                    <Link to={post.fields.slug} itemProp="url">
                       <GatsbyImage image={image} />
-                    </div>
+                    </Link>
                     <div className="content">
                       <header>
                         <h2>

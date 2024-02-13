@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import kebabCase from "lodash/kebabCase"
 import Sidebar from "../components/sidebar"
+import Mainimage from "../components/mainimage"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -27,6 +28,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
+      <Mainimage />
       <div className="main-container">
         <main className="main-content">
           <ol style={{ listStyle: `none` }}>
@@ -43,7 +45,9 @@ const BlogIndex = ({ data, location }) => {
                     itemType="http://schema.org/Article"
                   >
                     <div className="thumnail">
-                      <GatsbyImage image={image} />
+                      <Link to={post.fields.slug} itemProp="url">
+                        <GatsbyImage image={image} />
+                      </Link>
                     </div>
                     <div className="content">
                       <header>

@@ -402,7 +402,7 @@ a:focus {
   }
 
   .global-header {
-    margin-bottom: var(--spacing-3);
+    margin-bottom: var(--spacing-3_);
   }
 
   .main-content,
