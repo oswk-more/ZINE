@@ -106,7 +106,11 @@ export const Head = () => <Seo title="All posts" />
 
 export const pageQuery = graphql`
   {
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+    allMarkdownRemark(
+      skip: 0
+      limit: 5
+      sort: { frontmatter: { date: DESC } }
+    ) {
       nodes {
         excerpt
         fields {

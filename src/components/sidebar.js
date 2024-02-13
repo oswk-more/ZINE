@@ -19,7 +19,7 @@ const Sidebar = ({ isOpen, onClose }) => {
   const tags = data.allMarkdownRemark.distinct
   return (
     <div className={`sidebar ${isOpen ? "open" : ""}`}>
-      <h3>Tags</h3>
+      <h3>Theme</h3>
       <ul>
         <div className="tgs-article">
           {tags &&
@@ -34,7 +34,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                         item.fieldValue === tag && (
                           <span key={item.fieldValue}>
                             {" "}
-                            ({item.totalCount})
+                            （ {item.totalCount} ）
                           </span>
                         )
                     )}

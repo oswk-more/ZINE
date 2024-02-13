@@ -380,6 +380,11 @@ a:focus {
   /* サイドバーのスタイルはサイドバー用のCSSファイルで定義 */
 }
 
+/* 
+** The Header Media Queries **
+** Tweak as per your needs **
+*/
+
 /* レスポンシブデザイン用のメディアクエリ */
 @media screen and (max-width: 1200px) {
   .explanation {
