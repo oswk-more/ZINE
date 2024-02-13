@@ -11,7 +11,7 @@ module.exports = {
   siteMetadata: {
     title: `ZINE` /*サイトタイトル*/,
     author: {
-      name: `Sou` /*サイトの運営者*/,
+      name: `sou` /*サイトの運営者*/,
       summary: `趣味でweb開発と哲学をして。専門分野は生物学。人工生命つくってます。` /*まとめ*/,
     },
     description: `` /*サイトの説明欄*/,

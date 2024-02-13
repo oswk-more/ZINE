@@ -233,7 +233,7 @@ a:focus {
 .global-wrapper {
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
-  padding: var(--spacing-10) var(--spacing-5);
+  padding: var(--spacing-5) var(--spacing-5);
 }
 
 .global-wrapper[data-is-root-path="true"] .bio {
@@ -241,7 +241,7 @@ a:focus {
 }
 
 .global-header {
-  margin-bottom: var(--spacing-12);
+  margin-bottom: var(--spacing-4);
 }
 
 /* Header Title */
@@ -394,7 +394,7 @@ a:focus {
   .global-wrapper {
     margin: var(--spacing-0) auto;
     max-width: var(--maxWidth-wrapper);
-    padding: var(--spacing-10) var(--spacing-3);
+    padding: var(--spacing-5) var(--spacing-3);
   }
 
   .global-wrapper[data-is-root-path="true"] .bio {
@@ -402,7 +402,7 @@ a:focus {
   }
 
   .global-header {
-    margin-bottom: var(--spacing-12);
+    margin-bottom: var(--spacing-3);
   }
 
   .main-content,
