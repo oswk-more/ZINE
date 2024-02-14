@@ -25,11 +25,15 @@ const BlogPostTemplate = ({
           itemType="http://schema.org/Article"
         >
           <div className="hero">
-            <GatsbyImage image={image} />
+            <GatsbyImage
+              image={image}
+              alt={siteTitle}
+              imgClassName="rounded-image"
+            />
           </div>
 
           <header>
-            <h1 itemProp="headline">{post.frontmatter.title}</h1>
+            <h2 itemProp="headline">{post.frontmatter.title}</h2>
             <p>{post.frontmatter.date}</p>
             <div className="tags-article">
               {tags &&
@@ -43,13 +47,40 @@ const BlogPostTemplate = ({
                 })}
             </div>
           </header>
-
-          <section
-            dangerouslySetInnerHTML={{ __html: post.html }}
-            itemProp="articleBody"
-          />
+          <dev className="section">
+            <section
+              dangerouslySetInnerHTML={{ __html: post.html }}
+              itemProp="articleBody"
+            />
+          </dev>
 
           <hr />
+          <nav className="blog-post-nav">
+            <ul
+              style={{
+                display: `flex`,
+                flexWrap: `wrap`,
+                justifyContent: `space-between`,
+                listStyle: `none`,
+                padding: 20,
+              }}
+            >
+              <li>
+                {previous && (
+                  <Link to={previous.fields.slug} rel="prev">
+                    ← {previous.frontmatter.title}
+                  </Link>
+                )}
+              </li>
+              <li className="blog-post-nav-next">
+                {next && (
+                  <Link to={next.fields.slug} rel="next">
+                    {next.frontmatter.title} →
+                  </Link>
+                )}
+              </li>
+            </ul>
+          </nav>
           <footer>
             <Bio />
           </footer>
@@ -57,33 +88,6 @@ const BlogPostTemplate = ({
 
         <Sidebar />
       </div>
-
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
     </Layout>
   )
 }

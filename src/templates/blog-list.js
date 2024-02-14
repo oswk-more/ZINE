@@ -8,7 +8,7 @@ import Seo from "../components/seo"
 import kebabCase from "lodash/kebabCase"
 import Sidebar from "../components/sidebar"
 
-const BlogIndex = ({ data, location }) => {
+const BlogIndex = ({ data, location, pageContext }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
@@ -43,7 +43,11 @@ const BlogIndex = ({ data, location }) => {
                     itemType="http://schema.org/Article"
                   >
                     <Link to={post.fields.slug} itemProp="url">
-                      <GatsbyImage image={image} />
+                      <GatsbyImage
+                        image={image}
+                        alt={siteTitle}
+                        imgClassName="rounded-image"
+                      />
                     </Link>
                     <div className="content">
                       <header>
@@ -86,6 +90,29 @@ const BlogIndex = ({ data, location }) => {
               )
             })}
           </ol>
+          <ul className="pagenation">
+            {!pageContext.isFirst && (
+              <li className="prev">
+                <Link
+                  to={
+                    pageContext.currentPage === 2
+                      ? `/blog/`
+                      : `/blog/${pageContext.currentPage - 1}/`
+                  }
+                  rel="prev"
+                >
+                  <span>Prev</span>
+                </Link>
+              </li>
+            )}
+            {!pageContext.isLast && (
+              <li className="next">
+                <Link to={`/blog/${pageContext.currentPage + 1}/`} rel="next">
+                  <span>Next</span>
+                </Link>
+              </li>
+            )}
+          </ul>
 
           <Bio />
         </main>

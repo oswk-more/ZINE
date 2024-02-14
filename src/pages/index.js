@@ -46,7 +46,11 @@ const BlogIndex = ({ data, location }) => {
                   >
                     <div className="thumnail">
                       <Link to={post.fields.slug} itemProp="url">
-                        <GatsbyImage image={image} />
+                        <GatsbyImage
+                          image={image}
+                          alt={siteTitle}
+                          imgClassName="rounded-image"
+                        />
                       </Link>
                     </div>
                     <div className="content">

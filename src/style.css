@@ -9,7 +9,7 @@
   --maxWidth-2xl: 42rem;
   --maxWidth-3xl: 48rem;
   --maxWidth-4xl: 62rem;
-  --maxWidth-5xl: 76rem;
+  --maxWidth-5xl: 68rem;
   --maxWidth-full: "100%";
   --maxWidth-wrapper: var(--maxWidth-5xl);
   --spacing-px: "1px";
@@ -295,11 +295,11 @@ a:focus {
 }
 
 .tags-article button {
-  background-color: #f0f0f0;
-  padding: 4px 8px;
+  background-color: #ffffff;
+  padding: 5px 9px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
+  border-radius: 3px;
+  font-size: 12px;
   cursor: pointer;
   transition: background-color 0.3s ease; /* ホバーエフェクトを追加する場合 */
 }
@@ -345,6 +345,46 @@ a:focus {
   margin-bottom: var(--spacing-8);
 }
 
+.hero {
+  margin: var(--spacing-0) var(--spacing-0) var(--spacing-10) var(--spacing-0);
+  border-radius: 50px;
+}
+
+.rounded-image {
+  border-radius: 5px;
+}
+/* ページネーション */
+.pagenation {
+  margin-top: 1.8em;
+  list-style: none;
+  display: flex;
+}
+
+.pagenation .next {
+  margin-left: auto;
+}
+
+.pagenation a {
+  width: 4em;
+  padding: 0.4em 1em;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: rgb(107 114 128);
+  border: 1px solid #ccc;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+.pagenation .next a {
+  justify-content: flex-end;
+}
+
+.pagenation .prev [class*="fa-"] {
+  margin-right: 10px;
+}
+.pagenation .next [class*="fa-"] {
+  margin-left: 10px;
+}
 /* Media queries */
 
 @media (max-width: 42rem) {
@@ -432,10 +472,10 @@ a:focus {
   }
 
   .tags-article button {
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     padding: 3px 5px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 3px;
     font-size: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease; /* ホバーエフェクトを追加する場合 */

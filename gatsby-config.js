@@ -12,7 +12,7 @@ module.exports = {
     title: `ZINE` /*サイトタイトル*/,
     author: {
       name: `sou` /*サイトの運営者*/,
-      summary: `趣味でweb開発と哲学をして。専門分野は生物学。人工生命つくってます。` /*まとめ*/,
+      summary: `趣味でいろいろ作ってます。専門分野は生物学。最近興味のある分野・人工生命・哲学・ジェネレーティブアート` /*まとめ*/,
     },
     description: `` /*サイトの説明欄*/,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/` /*リンク先サイトのURL*/,

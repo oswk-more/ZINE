@@ -28,9 +28,9 @@ const Header = () => {
           <div class="-ml-8  flex-col gap-2.5 sm:flex-row sm:justify-center lg:flex lg:justify-start ">
             <a
               href="/blog/"
-              class="inline-block rounded-lg bg-gray-300 px-4 py-2 text-center text-xs font-light  outline-none ring-gray-500 transition duration-100 hover:bg-gray-400 focus-visible:ring active:bg-gray-500 md:text-base md:px-8 md:py-3"
+              class="inline-block px-2 py-1 text-gray-500 borderfont-semibold rounded hover:text-gray-900 md:px-8 md:py-3"
             >
-              記事一覧
+              All post
             </a>
           </div>
 

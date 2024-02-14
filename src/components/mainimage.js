@@ -25,7 +25,7 @@ const Mainimage = () => {
   return (
     <div class="bg-white py-4 ">
       {/* <!-- image - start --> */}
-      <div class="relative  overflow-hidden rounded-lg bg-gray-100 shadow-lg md:mb-8 ">
+      <div class="relative  overflow-hidden rounded  md:mb-8 ">
         <Img
           fluid={data.file.childImageSharp.fluid}
           loading="lazy"
