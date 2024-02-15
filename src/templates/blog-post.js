@@ -125,7 +125,7 @@ export const pageQuery = graphql`
         tags
         thumbnail {
           childImageSharp {
-            gatsbyImageData(width: 600, height: 300)
+            gatsbyImageData(width: 600, height: 380)
           }
         }
       }

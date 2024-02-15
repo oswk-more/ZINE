@@ -1,9 +1,9 @@
 ---
-title: AI時代に人間らしさを追求する
-date: "2024-02-12"
-description: シンギュラリティによって生き方はどう変化するのか、人間らしさについて考えてみる
-thumbnail: "./Markdown.jpg"
-tags: ["考察", "哲学"]
+title: ロゴ 「SNS BLOG ZINE」の意味とデザイン
+date: "2024-02-15"
+description: サイトのロゴについてそこに込めた意味とデザインについて
+thumbnail: "./LOGO.jpg"
+tags: ["デザイン", "創作"]
 ---
 
 ### 価値観の変化が加速している
