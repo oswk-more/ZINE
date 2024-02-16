@@ -18,7 +18,7 @@ const Header = () => {
               alt="Logo"
               placeholder="blurred"
               layout="fixed"
-              width={250} // ロゴの幅を適切に設定する
+              width={120} // ロゴの幅を適切に設定する
               height={60} // ロゴの高さを適切に設定する
             />
           </a>
